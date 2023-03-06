@@ -1,23 +1,30 @@
 import React from 'react';
 import Beast from './Beast';
+import './Main.css';
 
 class Main extends React.Component {
+
   render() {
-    return (
-      <>
+    let beasts = [];
+    this.props.data.forEach((bea,idx) => {
+      console.log(bea);
+      beasts.push(
+        <Beast
+          title={bea.title}
+          imageUrl={bea.image_url}
+          key={idx}
+          description={bea.description}
+        />
+      )
 
-        <Beast title={"Beast 1"} imageUrl = {"http://placekitten.com/200/300"} description ={"Hey, i am Beast 1"}/>
-        <Beast title={"Beast 2"} imageUrl = {"http://placekitten.com/200/300"} description ={"Hey, i am Beast 2"}/>
+    })
     
-      </>
+    return (
+      <main>
+        {beasts}
+      </main>
     )
-
-
-
-
-
-  }
-
+  };
 }
 
 export default Main;
