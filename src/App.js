@@ -1,6 +1,7 @@
 import React from 'react';
 import Main from './Main';
 import './App.css';
+import data from './data.json'
 
 class App extends React.Component {
   render() {
@@ -9,7 +10,8 @@ class App extends React.Component {
         <header>
           <h1>Gallery of Horns</h1>
         </header>
-        <Main/>
+        <Main data={data}/>
+        <footer> Abshir Ibrahim</footer>
         
 
         
