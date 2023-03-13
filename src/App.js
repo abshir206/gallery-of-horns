@@ -4,9 +4,7 @@ import Main from './Main';
 import Header from './Header';
 import Footer from './Footer';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Modal from 'react-bootstrap/Modal';
+import {Container, Row, Modal} from 'react-bootstrap';
 import './App.css';
 
 
@@ -36,16 +34,21 @@ class App extends React.Component {
     });
   }
 
+
+
+
+
   render() {
     return (
       <>
         <Header />
         <Container>
           <Row>
-            <Main data={data} handleOpenModal={this.handleOpenModal} />
+            <Main beasts={data} handleOpenModal={this.handleOpenModal} />
           </Row>
         </Container>
         <Footer />
+
         <Modal
           show={this.state.showModal}
           onHide={this.handleCloseModal}
@@ -63,6 +66,7 @@ class App extends React.Component {
           </Modal.Body>
           <Modal.Footer>{this.state.beastDescription}</Modal.Footer>
         </Modal>
+        
       </>
     );
   }
