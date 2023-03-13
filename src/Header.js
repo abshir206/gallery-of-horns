@@ -1,14 +1,19 @@
-import React from "react";
+import React from 'react';
+import './Main.css';
 
 class Header extends React.Component {
   render() {
+
     return (
       <>
-    <h1> Gallery of Horns </h1>
-    </>
-    )
-    
-  };
-};
+        <header>
+          <h1>Gallery of Beasts{this.props.totalLikes}</h1>
+        </header>
+      </>
+   );
+  }
+}
 
 export default Header;
+
+
