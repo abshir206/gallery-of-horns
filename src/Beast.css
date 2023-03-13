@@ -1,3 +1,44 @@
-h3 {
-  color: purple;
+
+
+.Beasts {
+  border: 1px solid teal;
+  padding: 1vw;
+  margin-bottom: 1vw;
+  background-color: teal;
+  border-radius: 15px;
+  width: 19%;
+}
+
+.person h2 {
+  font-family:'Times New Roman', Times, serif;
+  font-weight: bold;
+  text-align: center;
+  color: gold;
+  border: white;
+  border-radius: 6px;
+}
+
+.person h3 {
+  font-size: 15px;
+  text-align: center;
+  border: 1px solid teal;
+  background-color: magenta;
+  border-radius: 6px;
+}
+
+.person img {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.person p {
+  font-size: 11px;
+  margin: auto;
+  display: inline-block;
+  margin-bottom: .5rem;
+}
+
+button .handle {
+  display: block;
+  margin-bottom: 2rem;
 }

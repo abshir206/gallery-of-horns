@@ -1,42 +1,51 @@
-import React from "react";
-import './Beast.css';
-import Card from 'react-bootstrap/Card'
-//import './Main.js';
+import React from 'react';
+import Card from 'react-bootstrap/Card';
+import Col from 'react-bootstrap/Col';
+import './Main.css';
 
-class Beast extends React.Component {
+class HornedBeast extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      waves: 0
-    };
+      likes: 0
+    }
   }
 
-  handleWaves = () => {
+  handleLikes = () => {
     this.setState({
-      waves: this.state.waves +1,
+      likes: this.state.likes + 1
     });
+  }
+
+  handleHeaderClick = () => {
+    this.props.handleOpenModal(this.props.name, this.props.imageURL, this.props.description);
   }
 
   render() {
     return (
-      <>
-        <Card>
-          <h2> {this.props.title} </h2>
-          <p> 🖤{this.state.waves} Likes</p>
-          <p onClick={this.handleWaves}> Favorite Beast</p>
-          <img 
-          src={this.props.imageUrl} 
-          alt={this.props.description}
-          title={this.props.title}
-          />  
-          <p> {this.props.description} </p>
+      <Col style={{ margin: '1.5rem' }}>
+        <Card >
+          <article className="hornedBeast">
+            <h2>{this.props.name}</h2>
+            <div className='likeClicks'>
+              <p className='likeButton' onClick={this.handleLikes}>Like!</p>
+              <p>❤️{this.state.likes}</p>
+            </div>
+            <img
+              src={this.props.imageURL}
+              alt={this.props.keyword}
+              onClick={this.handleHeaderClick}
+              style={{ maxHeight: '18rem', maxWidth: '18rem' }}
+            />
+            <div className='beastInfo'>
+              <p>{this.props.description}</p>
+              <p>Horns: {this.props.horns}</p>
+            </div>
+          </article>
         </Card>
-
-      </>
-
-        );
+      </Col>
+    );
   }
+}
 
-};
-
-export default Beast;
+export default HornedBeast;
