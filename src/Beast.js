@@ -17,15 +17,16 @@ class HornedBeast extends React.Component {
     });
   }
 
-  handleHeaderClick = () => {
+  handleImgClick = () => {
     this.props.handleOpenModal(this.props.name, this.props.imageURL, this.props.description);
+    this.handleLikes();
   }
 
   render() {
     return (
-      <Col style={{ margin: '1.5rem' }}>
-        <Card >
-          <article className="hornedBeast">
+      <Col xs={4} className='mb-4'>
+        <Card className='cardFormat'>
+          <article className="hornedBeast p-4">
             <h2>{this.props.name}</h2>
             <div className='likeClicks'>
               <p className='likeButton' onClick={this.handleLikes}>Like!</p>
@@ -34,7 +35,7 @@ class HornedBeast extends React.Component {
             <img
               src={this.props.imageURL}
               alt={this.props.keyword}
-              onClick={this.handleHeaderClick}
+              onClick={this.handleImgClick}
               style={{ maxHeight: '18rem', maxWidth: '18rem' }}
             />
             <div className='beastInfo'>
